@@ -24,6 +24,6 @@ class java::oracle::params {
     $repository_name = 'webupd8team'
     $release = $::lsbdistcodename
     $repos = 'main'
-    $key = 'EEA14886'
+    $key = '7B2C3B0889BF5709A105D03AC2518248EEA14886'
     $key_server = 'hkp://keyserver.ubuntu.com:80'
 }
