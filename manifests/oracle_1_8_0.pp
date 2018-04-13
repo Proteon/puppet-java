@@ -5,7 +5,11 @@ class java::oracle_1_8_0 (
 
     package { $package:
         ensure  => installed,
-        require => [ Class['oracle'], Apt::Source[$java::oracle::params::repository_name] ],
+        require => [
+            Class['oracle'],
+            Apt::Source[$java::oracle::params::repository_name],
+            Exec[apt_update],
+        ],
     }
 
     exec { "${package}accepted-oracle-license-v1-1":
