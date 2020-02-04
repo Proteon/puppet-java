@@ -18,5 +18,5 @@
 #
 class java::oracle_1_8_0::params {
     $home = '/usr/lib/jvm/java-8-oracle'
-    $package = 'oracle-java8-installer'
+#    $package = 'oracle-java8-installer'
 }

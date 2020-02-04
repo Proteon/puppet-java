@@ -3,13 +3,15 @@ class java::oracle_1_8_0 (
     $home    = $java::oracle_1_8_0::params::home) inherits java::oracle_1_8_0::params {
     include oracle
 
-    package { $package:
-        ensure  => installed,
-        require => [
-            Class['oracle'],
-            Apt::Source[$java::oracle::params::repository_name],
-            Exec[apt_update],
-        ],
+    if $package {
+        package { $package:
+            ensure  => installed,
+            require => [
+                Class['oracle'],
+                Apt::Source[$java::oracle::params::repository_name],
+                Exec[apt_update],
+            ],
+        }
     }
 
     exec { "${package}accepted-oracle-license-v1-1":
